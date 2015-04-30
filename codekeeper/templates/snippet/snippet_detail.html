@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block body %}
+	<h1>Detail</h1>
+	<dl>
+		<dt>Snippet title: </dt>
+		<dd>{{ content.title }}</dd>
+		<dt>Snippet</dt>
+		<dd>{{ content.snippet }}</dt>
+		<dt>Creator</dt>
+		<dd>{{ content.creator }}</dd>	
+	</dl>
+{% endblock %}
