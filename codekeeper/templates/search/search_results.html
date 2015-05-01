@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% if content.results.numFound > 0 %}
+	{% for result in content.results.results %}
+		<div class="row">
+			<div class="search-result">
+				<p>{{ result.type }}-{{ result.id }}</p>
+			</div>
+		</div>
+	{% endforr %}
+{% else %}
+	<h5>No Result Found</h5>
+{% endif %}
