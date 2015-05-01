@@ -3,3 +3,7 @@
 /app_env/*
 
 /codekeeper.sqlite3
+
+/app_env
+
+__pycache__/*
