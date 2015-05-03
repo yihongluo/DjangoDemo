@@ -1,10 +1,28 @@
-{% extends "base.html %"}
+{% extends "base.html" %}
 
 {% block body %}
-	<h1>List</h1>
-	<ul>
-	{% for snippet in content %}
-		<li><a href="{{ snippet.url }}">{{ snippet.title }}</a></li>
-	{% endfor %}
-	</ul>
+	<h1>Snippets</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Snippets</th>
+				<th>Tags</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for snippet in content %}
+			<tr>
+				<td><a href="{{ snippet.url }}">{{ snippet.title }}</a></td>
+				<td>
+					<ul>
+					{% for tag in snippet.tags %}
+						<li><a href="{{ tag.url }}">{{ tag.name }}</a></li>
+					{% endfor %}
+					</ul>
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+
 {% endblock %}

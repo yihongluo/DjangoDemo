@@ -21,10 +21,10 @@ class SearchView(GenericAPIView):
         import pdb
         pdb.set_trace()
 
-        solrconn = scorched.SolrInterfaace(settings.SOLR_SERVER)
+        solrconn = scorched.SolrInterface(settings.SOLR_SERVER)
         resp = solrconn.query(title=querydict.get('q')).execute()
 
-        result = {'results': querydict}
+        result = [results for results in resp]
         return Response(result)
 
     #   s = SolrSearch(request)
@@ -32,5 +32,4 @@ class SearchView(GenericAPIView):
     #   result = {'results': search_results}
     #   response = Response(result)
     #   return response 
-
 
